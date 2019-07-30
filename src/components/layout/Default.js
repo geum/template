@@ -1,7 +1,17 @@
 import React from 'react';
 import { Common } from '@components';
 
+/**
+ * Layout Default Component
+ *
+ * @extends React.Component
+ */
 class Default extends React.Component {
+  /**
+   * Renders the component
+   *
+   * @return {Component}
+   */
   render() {
     return (
       <div className="layout-default d-flex">
@@ -11,9 +21,7 @@ class Default extends React.Component {
         <div className="content-container">
           <Common.Header />
 
-          <div className="content container-fluid">
-            <h1>Content Here</h1>
-          </div>
+          {this.props.children}
         </div>
       </div>
     )

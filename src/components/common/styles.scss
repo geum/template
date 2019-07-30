@@ -1,5 +1,27 @@
 .header {
+  box-shadow: 1px 1px 3px #ccc;
   height: 50px;
+
+  .nav-divider {
+    border-left: 1px solid #ccc;
+    height: 25px;
+    margin: 0px 8px;
+    opacity: .5;
+    padding: 0px 0px !important;
+  }
+
+  .dropdown-toggle {
+    font-size: 12px;
+
+    &:after {
+      border: none;
+      content: '\f107';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      margin-left: 5px;
+      vertical-align: middle;
+    }
+  }
 
   .dropdown-menu {
     left: -70px;
@@ -18,10 +40,12 @@
     .title {
       color: #FFF;
       font-weight: 500;
+      font-size: 12px;
     }
 
     .toggle a {
       color: #FFF;
+      font-size: 16px;
     }
   }
 

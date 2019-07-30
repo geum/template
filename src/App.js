@@ -1,5 +1,6 @@
 import React from 'react';
-import { Layout } from '@components';
+import { Route, Switch } from 'react-router-dom';
+import { Schema } from '@components';
 
 /**
  * Main App Component
@@ -14,9 +15,9 @@ class App extends React.Component {
    */
   render() {
     return (
-      <Layout.Default>
-        <h1>Content Here</h1>
-      </Layout.Default>
+      <Switch>
+        <Route path="/admin/schema" component={Schema.Routes} />
+      </Switch>
     )
   }
 }

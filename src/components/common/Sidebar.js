@@ -1,15 +1,27 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
+/**
+ * Common Sidebar Component
+ *
+ * @extends React.Component
+ */
 class Sidebar extends React.Component {
+  /**
+   * Sets initial menu state
+   *
+   * @param {Object} props
+   */
   constructor(props) {
     super(props);
 
+    // initial state
     this.state = {
       menu: [
         {
           icon: 'fas fa-coffee',
           text: 'Admin',
-          href: '#',
+          href: '',
           menu: [
             {
               icon: 'fas fa-user',
@@ -56,6 +68,12 @@ class Sidebar extends React.Component {
     }
   }
 
+  /**
+   * Renders the menu container
+   *
+   * @param  {Array} items
+   * @return {Component}
+   */
   renderMenu(items) {
     return (
       <ul className="menu-items">
@@ -64,12 +82,18 @@ class Sidebar extends React.Component {
     )
   }
 
+  /**
+   * Renders the menu items
+   *
+   * @param  {Array} items
+   * @return {Component}
+   */
   renderMenuItems(items) {
     return items.map((item, index) => {
       return (
         <li className={`menu-item ${item.active ? 'active' : ''}`} key={index}>
-          <a
-            href="#"
+          <Link
+            to="#"
             className="menu-detail d-flex align-items-center p-3"
           >
             <div className="menu-icon">
@@ -85,7 +109,7 @@ class Sidebar extends React.Component {
                 </div>
               )
             }
-          </a>
+          </Link>
 
           {Array.isArray(item.menu)
             && item.menu.length
@@ -96,6 +120,11 @@ class Sidebar extends React.Component {
     });
   }
 
+  /**
+   * Renders the component
+   *
+   * @return {Component}
+   */
   render() {
     return (
       <div className="sidebar">
@@ -104,9 +133,9 @@ class Sidebar extends React.Component {
             CRADLE
           </div>
           <div className="toggle w-100 text-right">
-            <a href="#">
+            <Link to="#">
               <i className="fas fa-bars"></i>
-            </a>
+            </Link>
           </div>
         </div>
         <div className="menu">
