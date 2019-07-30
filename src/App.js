@@ -1,14 +1,12 @@
-import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
-
-import Schema from '@components/schema';
+import React from 'react';
+import { Layout } from '@components';
 
 /**
  * Main App Component
  *
  * @extends Component
  */
-class App extends Component {
+class App extends React.Component {
   /**
    * Renders the component
    *
@@ -16,9 +14,9 @@ class App extends Component {
    */
   render() {
     return (
-      <Switch>
-        <Route path="/admin/schema" component={Schema.Routes} />
-      </Switch>
+      <Layout.Default>
+        <h1>Content Here</h1>
+      </Layout.Default>
     )
   }
 }

@@ -3,8 +3,9 @@ const path = require('path');
 module.exports = {
   webpack: {
     alias: {
+      '@components': path.join(__dirname, 'src', 'components'),
       '@root': path.join(__dirname, 'src'),
-      '@components': path.join(__dirname, 'src', 'components')
+      '@styles': path.join(__dirname, 'src', 'styles')
     }
   }
 }

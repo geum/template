@@ -1,0 +1,75 @@
+.header {
+  height: 50px;
+
+  .dropdown-menu {
+    left: -70px;
+  }
+}
+
+.sidebar {
+  background-color: #43425D;
+  height: 100%;
+
+  .branding {
+    background-color: #3C3B53;
+    height: 50px;
+    width: 100%;
+
+    .title {
+      color: #FFF;
+      font-weight: 500;
+    }
+
+    .toggle a {
+      color: #FFF;
+    }
+  }
+
+  .menu {
+    ul {
+      list-style-type: none;
+    }
+
+    ul {
+      padding: 0;
+    }
+
+    > ul ul .menu-item {
+      padding-left: 20px;
+    }
+
+    .menu-item.active {
+      background-color: #3C3B53;
+
+      .menu-item.active {
+        background-color: #36354A;
+        border-left: 4px solid #A3A0FB;
+      }
+
+      .menu-item.active .menu-icon {
+        color: #A3A0FB;
+      }
+    }
+
+    .menu-detail {
+      color: #FFF;
+      font-size: 12px;
+      text-decoration: none;
+
+      .menu-icon {
+        color: #A5A4BF;
+        font-size: 14px;
+        margin-right: 8px;
+      }
+
+      .menu-text {
+        font-weight: lighter;
+      }
+
+      .menu-toggle {
+        font-size: 14px;
+        font-weight: lighter;
+      }
+    }
+  }
+}
