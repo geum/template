@@ -21,6 +21,10 @@ table {
     font-weight: 500;
     font-size: 12px;
   }
+
+  tr.group {
+    background-color: #E1E1E8 !important;
+  }
 }
 
 .nowrap { white-space: nowrap; }

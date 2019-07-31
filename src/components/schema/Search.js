@@ -17,7 +17,7 @@ class Search extends React.Component {
 
     // initial state
     this.state = {
-      schemas: [{}, {}, {}, {}, {}, {}]
+      schemas: [{ group: 'API' }, {}, {}, { group: 'REST' }, {}, {}]
     }
   }
 
@@ -31,44 +31,55 @@ class Search extends React.Component {
 
     return schemas.map((value, index) => {
       return (
-        <tr>
-          <td className="actions nowrap">
-            <Link to="#" className="btn btn-secondary my-1">
-              <i className="fa fa-eye"></i>
-            </Link>
-            &nbsp;
-            <Link to="#" className="btn btn-secondary my-1">
-              <i className="fa fa-copy"></i>
-            </Link>
-            &nbsp;
-            <Link to="#" className="btn btn-secondary my-1">
-              <i className="fa fa-edit"></i>
-            </Link>
-          </td>
-          <td className="detail">
-            <Link to="#" className="d-block mb-2">
-              <i className="fa fa-mobile-alt"></i>&nbsp;
-              Application
-            </Link>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Pellentesque suscipit sagittis risus. Aenean fermentum
-              est nec odio tempus, a suscipit ligula malesuada.
-              Mauris pulvinar pretium nulla at fringilla.
-            </p>
-          </td>
-          <td className="relations nowrap">
-            <span className="d-block">
-              1:1 profile
-            </span>
-            <span className="d-block">
-              1:N scope
-            </span>
-            <span className="d-block">
-              1:N webhook
-            </span>
-          </td>
-        </tr>
+        <>
+          {value.group && (
+            <tr class="group">
+              <td class="text-right">
+                  <i class="fas fa-caret-down"></i>
+              </td>
+              <td colspan="2"><strong>{value.group}</strong></td>
+            </tr>
+          )}
+
+          <tr>
+            <td className="actions nowrap">
+              <Link to="#" className="btn btn-secondary my-1">
+                <i className="fa fa-eye"></i>
+              </Link>
+              &nbsp;
+              <Link to="#" className="btn btn-secondary my-1">
+                <i className="fa fa-copy"></i>
+              </Link>
+              &nbsp;
+              <Link to="#" className="btn btn-secondary my-1">
+                <i className="fa fa-edit"></i>
+              </Link>
+            </td>
+            <td className="detail">
+              <Link to="#" className="d-block mb-2">
+                <i className="fa fa-mobile-alt"></i>&nbsp;
+                Application
+              </Link>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Pellentesque suscipit sagittis risus. Aenean fermentum
+                est nec odio tempus, a suscipit ligula malesuada.
+                Mauris pulvinar pretium nulla at fringilla.
+              </p>
+            </td>
+            <td className="relations nowrap">
+              <span className="d-block">
+                1:1 profile
+              </span>
+              <span className="d-block">
+                1:N scope
+              </span>
+              <span className="d-block">
+                1:N webhook
+              </span>
+            </td>
+          </tr>
+        </>
       )
     });
   }
@@ -123,7 +134,7 @@ class Search extends React.Component {
 
             <div className="row mt-3 overflow-x-scroll">
               <div className="col">
-                <table className="table table-striped table-overflow">
+                <table className="table table-striped table-responsive">
                   <thead>
                     <tr>
                       <th>ACTIONS</th>
