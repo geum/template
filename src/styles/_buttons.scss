@@ -1,0 +1,26 @@
+.btn {
+  border-radius: 0;
+  font-size: 10px;
+}
+
+.btn-purple {
+  color: #FFF;
+  border-color: #43425D;
+  background-color: #43425D;
+}
+
+.btn-outline-purple {
+  color: #43425D;
+  border-color: #43425D;
+}
+
+.btn-purple:hover {
+  color: #FFF;
+  background-color: #36354A;
+}
+
+.btn-outline-purple:hover {
+  color: #FFF;
+  border-color: #43425D;
+  background-color: #43425D;
+}

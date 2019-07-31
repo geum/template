@@ -6,7 +6,9 @@ $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
 @import "~@fortawesome/fontawesome-free/scss/brands";
 
 
+@import 'buttons';
 @import 'general';
+@import 'texts';
 @import '@components/common/styles.scss';
 @import '@components/layout/styles.scss';
 @import '@components/schema/styles.scss';
