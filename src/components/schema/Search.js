@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Common } from '@components';
 
 /**
  * Schema Search Component
@@ -17,6 +18,7 @@ class Search extends React.Component {
 
     // initial state
     this.state = {
+      modal: false,
       schemas: [{ group: 'API' }, {}, {}, { group: 'REST' }, {}, {}]
     }
   }
@@ -31,13 +33,13 @@ class Search extends React.Component {
 
     return schemas.map((value, index) => {
       return (
-        <>
+        <React.Fragment key={index}>
           {value.group && (
-            <tr class="group">
-              <td class="text-right">
-                  <i class="fas fa-caret-down"></i>
+            <tr className="group">
+              <td className="text-right">
+                  <i className="fas fa-caret-down"></i>
               </td>
-              <td colspan="2"><strong>{value.group}</strong></td>
+              <td colSpan="2"><strong>{value.group}</strong></td>
             </tr>
           )}
 
@@ -56,7 +58,9 @@ class Search extends React.Component {
               </Link>
             </td>
             <td className="detail">
-              <Link to="#" className="d-block mb-2">
+              <Link to="#" className="d-block mb-2" onClick={() => {
+                this.setState({ modal: !this.state.modal });
+              }}>
                 <i className="fa fa-mobile-alt"></i>&nbsp;
                 Application
               </Link>
@@ -79,7 +83,7 @@ class Search extends React.Component {
               </span>
             </td>
           </tr>
-        </>
+        </React.Fragment>
       )
     });
   }
@@ -151,6 +155,31 @@ class Search extends React.Component {
           </div>
         </div>
 
+        <Common.Modal
+          direction="right"
+          containerStyle={{
+            height: '100%',
+            width: '400px',
+          }}
+          onClose={() => this.setState({ modal: !this.state.modal })}
+          visible={this.state.modal}
+        >
+          <div className="admin-schema-modal p-3">
+            <div className="row d-flex align-items-center">
+              <div className="col-md">
+                <h3>Create Schema</h3>
+              </div>
+              <div className="col-md">
+                <button
+                  className="close"
+                  onClick={() => this.setState({ modal: !this.state.modal })}
+                >
+                  <i className="fa fa-times"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </Common.Modal>
       </div>
     )
   }

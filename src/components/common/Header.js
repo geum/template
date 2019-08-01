@@ -14,7 +14,7 @@ class Header extends React.Component {
    */
   render() {
     return (
-      <Navbar className="header" bg="white" expand="lg">
+      <Navbar className="common-header" bg="white" expand="lg">
         <Navbar.Collapse>
           <Nav className="ml-auto align-items-center">
             <Nav.Link>

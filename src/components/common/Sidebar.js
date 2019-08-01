@@ -127,7 +127,7 @@ class Sidebar extends React.Component {
    */
   render() {
     return (
-      <div className="sidebar">
+      <div className="common-sidebar">
         <div className="branding d-flex align-items-center px-3">
           <div className="title w-100">
             CRADLE

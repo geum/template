@@ -1,4 +1,4 @@
-.header {
+.common-header {
   box-shadow: 1px 1px 3px #ccc;
   height: 50px;
 
@@ -28,7 +28,7 @@
   }
 }
 
-.sidebar {
+.common-sidebar {
   background-color: #43425D;
   height: 100%;
 
@@ -96,4 +96,27 @@
       }
     }
   }
+}
+
+.common-modal-container {
+  background-color: #FFF;
+  position: absolute;
+  top: 0;
+
+  &.modal-left {
+    left: 0;
+  }
+
+  &.modal-right {
+    right: 0;
+  }
+}
+
+.common-modal-overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
