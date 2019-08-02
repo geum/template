@@ -12,9 +12,7 @@ const Container = posed.div({
     // we should came from on enter
     x: (props) => {
       // get direction and dimensions
-      let { direction, dimensions } = props;
-      // get the current width
-      let width = dimensions.measure().width;
+      let { direction } = props;
 
       // if left or right
       if (direction === 'left'
@@ -24,7 +22,7 @@ const Container = posed.div({
       }
     },
     opacity: 1,
-    delay: 300,
+    delay: 300
   },
   // figure out on what direction
   // we should go on exit
@@ -51,7 +49,7 @@ const Container = posed.div({
       }
     },
     opacity: 0,
-    transition: { duration: 150 }
+    transition: { duration: 300 }
   }
 });
 

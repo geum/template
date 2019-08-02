@@ -18,7 +18,7 @@ class Search extends React.Component {
 
     // initial state
     this.state = {
-      modal: false,
+      modal: true,
       schemas: [{ group: 'API' }, {}, {}, { group: 'REST' }, {}, {}]
     }
   }
@@ -45,15 +45,15 @@ class Search extends React.Component {
 
           <tr>
             <td className="actions nowrap">
-              <Link to="#" className="btn btn-secondary my-1">
+              <Link to="#" className="btn btn-purple my-1">
                 <i className="fa fa-eye"></i>
               </Link>
               &nbsp;
-              <Link to="#" className="btn btn-secondary my-1">
+              <Link to="#" className="btn btn-purple my-1">
                 <i className="fa fa-copy"></i>
               </Link>
               &nbsp;
-              <Link to="#" className="btn btn-secondary my-1">
+              <Link to="#" className="btn btn-purple my-1">
                 <i className="fa fa-edit"></i>
               </Link>
             </td>
@@ -124,13 +124,13 @@ class Search extends React.Component {
               </div>
 
               <div className="col-md d-flex align-items-center justify-content-end">
-                <a className="d-inline-block ml-5 text-purple text-small" href="#">
+                <Link className="d-inline-block ml-5 text-purple text-small" to="#">
                   <i className="fas fa-cloud-upload-alt"></i> IMPORT
-                </a>
-                <a className="d-inline-block ml-5 text-purple text-small" href="#">
+                </Link>
+                <Link className="d-inline-block ml-5 text-purple text-small" to="#">
                   <i className="fas fa-cloud-download-alt"></i> EXPORT
-                </a>
-                <Link to="#" className="btn btn-primary d-inline-block ml-5 px-4 py-2">
+                </Link>
+                <Link className="btn btn-primary d-inline-block ml-5 px-4 py-2" to="#" >
                   <i className="fas fa-plus"></i> ADD
                 </Link>
               </div>
@@ -164,8 +164,8 @@ class Search extends React.Component {
           onClose={() => this.setState({ modal: !this.state.modal })}
           visible={this.state.modal}
         >
-          <div className="admin-schema-modal p-3">
-            <div className="row d-flex align-items-center">
+          <div className="admin-schema-modal d-flex flex-column">
+            <div className="row d-flex header align-items-center p-4">
               <div className="col-md">
                 <h3>Create Schema</h3>
               </div>
@@ -174,9 +174,116 @@ class Search extends React.Component {
                   className="close"
                   onClick={() => this.setState({ modal: !this.state.modal })}
                 >
-                  <i className="fa fa-times"></i>
+                  <span aria-hidden="true">&times;</span>
                 </button>
               </div>
+            </div>
+
+            <div className="row mt-3">
+              <div className="col-md">
+                <ul className="nav nav-tabs">
+                  <li className="nav-item">
+                    <Link className="nav-link active" to="#">
+                      Info
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="#">
+                      Fields
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="#">
+                      Relations
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/** Separate as component */}
+            <div className="mt-3 p-4">
+              <div className="form-group form-group-row row mx-0 mb-4">
+                <label className="col-md-3 col-form-label">
+                  Singular <span className="text-danger">*</span>
+                </label>
+                <div className="col-md col-form-input">
+                  <input
+                    type="text"
+                    className="form-control text-right"
+                    placeholder="Singular"
+                  />
+                </div>
+              </div>
+              <div className="form-group form-group-row row mx-0 mb-4">
+                <label className="col-md-3 col-form-label">
+                  Plural <span className="text-danger">*</span>
+                </label>
+                <div className="col-md col-form-input">
+                  <input
+                    type="text"
+                    className="form-control text-right"
+                    placeholder="Plural"
+                  />
+                </div>
+              </div>
+              <div className="form-group form-group-row row mx-0 mb-4">
+                <label className="col-md-3 col-form-label">
+                  Keyword <span className="text-danger">*</span>
+                </label>
+                <div className="col-md col-form-input">
+                  <input
+                    type="text"
+                    className="form-control text-right"
+                    placeholder="Keyword"
+                  />
+                </div>
+              </div>
+              <div className="form-group form-group-row row mx-0 mb-4">
+                <label className="col-md-3 col-form-label">
+                  Group <span className="text-danger">*</span>
+                </label>
+                <div className="col-md col-form-input">
+                  <input
+                    type="text"
+                    className="form-control text-right"
+                    placeholder="Group"
+                  />
+                </div>
+              </div>
+              <div className="form-group form-group-row row mx-0 mb-4">
+                <label className="col-md-3 col-form-label">
+                  Icon
+                </label>
+                <div className="col-md col-form-input">
+                  <input
+                    type="text"
+                    className="form-control text-right"
+                    placeholder="Icon"
+                  />
+                </div>
+              </div>
+              <div className="form-group form-group-row row mx-0 mb-4">
+                <label className="col-md-3 col-form-label">
+                  Summary
+                </label>
+                <div className="col-md col-form-input">
+                  <input
+                    type="text"
+                    className="form-control text-right"
+                    placeholder="Summary"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="d-flex p-3 mt-auto mb-3">
+              <button className="btn btn-danger mx-1 w-50">
+                <i className="fa fa-trash"></i> CANCEL
+              </button>
+              <button className="btn btn-primary mx-1 w-50">
+                <i className="fa fa-check"></i> SAVE
+              </button>
             </div>
           </div>
         </Common.Modal>
