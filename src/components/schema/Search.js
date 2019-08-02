@@ -138,7 +138,7 @@ class Search extends React.Component {
 
             <div className="row mt-3 overflow-x-scroll">
               <div className="col">
-                <table className="table table-striped table-responsive">
+                <table className="table table-striped">
                   <thead>
                     <tr>
                       <th>ACTIONS</th>

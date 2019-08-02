@@ -5,10 +5,14 @@
   }
 
   table {
-    table-layout: fixed;
+    min-width: 100%;
+
+    .actions {
+      width: 1px;
+    }
   }
 }
 
 .admin-schema-modal {
-  
+
 }
