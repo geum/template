@@ -18,7 +18,7 @@ class Search extends React.Component {
 
     // initial state
     this.state = {
-      modal: true,
+      modal: false,
       schemas: [{ group: 'API' }, {}, {}, { group: 'REST' }, {}, {}]
     }
   }
