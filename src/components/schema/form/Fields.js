@@ -5,7 +5,7 @@ import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 const getItems = count =>
   Array.from({ length: count }, (v, k) => k).map(k => ({
     id: `item-${k}`,
-    content: `item ${k}`
+    content: `draggable item ${k}`
   }));
 
 // a little function to help us with reordering the result
@@ -17,7 +17,7 @@ const reorder = (list, startIndex, endIndex) => {
   return result;
 };
 
-const grid = 4;
+const grid = 8;
 
 const getItemStyle = (isDragging, draggableStyle) => ({
   // some basic styles to make the items look a bit nicer
@@ -35,7 +35,7 @@ const getItemStyle = (isDragging, draggableStyle) => ({
 const getListStyle = isDraggingOver => ({
   background: isDraggingOver ? "lightblue" : "lightgrey",
   padding: grid,
-  width: 250
+  width: '100%'
 });
 
 /**

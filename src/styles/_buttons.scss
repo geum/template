@@ -4,6 +4,10 @@
   font-weight: lighter;
 }
 
+.btn:focus {
+  box-shadow: none !important;
+}
+
 .btn-purple {
   color: #FFF;
   border-color: #43425D;
