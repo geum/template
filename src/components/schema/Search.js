@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Common } from '@components';
+import { Common, Icon } from '@components';
 
 /**
  * Schema Search Component
@@ -18,7 +18,7 @@ class Search extends React.Component {
 
     // initial state
     this.state = {
-      modal: false,
+      modal: true,
       schemas: [{ group: 'API' }, {}, {}, { group: 'REST' }, {}, {}]
     }
   }
@@ -203,77 +203,65 @@ class Search extends React.Component {
 
             {/** Separate as component */}
             <div className="mt-3 p-4">
-              <div className="form-group form-group-row row mx-0 mb-4">
-                <label className="col-md-3 col-form-label">
+              <div className="form-group">
+                <label>
                   Singular <span className="text-danger">*</span>
                 </label>
-                <div className="col-md col-form-input">
-                  <input
-                    type="text"
-                    className="form-control text-right"
-                    placeholder="Singular"
-                  />
-                </div>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Singular"
+                />
               </div>
-              <div className="form-group form-group-row row mx-0 mb-4">
-                <label className="col-md-3 col-form-label">
+
+              <div className="form-group">
+                <label>
                   Plural <span className="text-danger">*</span>
                 </label>
-                <div className="col-md col-form-input">
-                  <input
-                    type="text"
-                    className="form-control text-right"
-                    placeholder="Plural"
-                  />
-                </div>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Plural"
+                />
               </div>
-              <div className="form-group form-group-row row mx-0 mb-4">
-                <label className="col-md-3 col-form-label">
+
+              <div className="form-group">
+                <label>
                   Keyword <span className="text-danger">*</span>
                 </label>
-                <div className="col-md col-form-input">
-                  <input
-                    type="text"
-                    className="form-control text-right"
-                    placeholder="Keyword"
-                  />
-                </div>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Keyword"
+                />
               </div>
-              <div className="form-group form-group-row row mx-0 mb-4">
-                <label className="col-md-3 col-form-label">
+
+              <div className="form-group">
+                <label>
                   Group <span className="text-danger">*</span>
                 </label>
-                <div className="col-md col-form-input">
-                  <input
-                    type="text"
-                    className="form-control text-right"
-                    placeholder="Group"
-                  />
-                </div>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Group"
+                />
               </div>
-              <div className="form-group form-group-row row mx-0 mb-4">
-                <label className="col-md-3 col-form-label">
+
+              <div className="form-group">
+                <label>
                   Icon
                 </label>
-                <div className="col-md col-form-input">
-                  <input
-                    type="text"
-                    className="form-control text-right"
-                    placeholder="Icon"
-                  />
-                </div>
+                <Icon.Picker />
               </div>
-              <div className="form-group form-group-row row mx-0 mb-4">
-                <label className="col-md-3 col-form-label">
+              <div className="form-group">
+                <label>
                   Summary
                 </label>
-                <div className="col-md col-form-input">
-                  <input
-                    type="text"
-                    className="form-control text-right"
-                    placeholder="Summary"
-                  />
-                </div>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Summary"
+                />
               </div>
             </div>
 

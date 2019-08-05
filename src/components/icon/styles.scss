@@ -1,0 +1,30 @@
+.icon-picker {
+  position: relative;
+
+  .input-group-text {
+    justify-content: center;
+    width: 40px;
+  }
+
+  .icon-list {
+    background-color: #FFF;
+    border-top: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-height: 250px;
+    max-height: 250px;
+    overflow-y: scroll;
+    position: absolute;
+    width: 100%;
+
+    .icon-button {
+      border: none !important;
+      height: 40px;
+      font-size: 20px;
+      margin: 2px;
+      outline: none !important;
+      width: 40px;
+    }
+  }
+}
