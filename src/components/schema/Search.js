@@ -160,6 +160,7 @@ class Search extends React.Component {
           containerStyle={{
             height: '100%',
             width: '400px',
+            position: 'fixed'
           }}
           onClose={() => this.setState({ modal: !this.state.modal })}
           visible={this.state.modal}
@@ -202,7 +203,7 @@ class Search extends React.Component {
             </div>
 
             {/** Separate as component */}
-            <div className="mt-3 p-4">
+            <div className="mt-3 p-4 admin-schema-info">
               <div className="form-group">
                 <label>
                   Singular <span className="text-danger">*</span>
@@ -265,11 +266,11 @@ class Search extends React.Component {
               </div>
             </div>
 
-            <div className="d-flex p-3 mt-auto mb-3">
-              <button className="btn btn-danger mx-1 w-50">
+            <div className="d-flex p-3 mt-auto">
+              <button className="btn btn-danger mx-1 w-50 py-2">
                 <i className="fa fa-trash"></i> CANCEL
               </button>
-              <button className="btn btn-primary mx-1 w-50">
+              <button className="btn btn-primary mx-1 w-50 py-2">
                 <i className="fa fa-check"></i> SAVE
               </button>
             </div>

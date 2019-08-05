@@ -107,7 +107,9 @@ class Picker extends React.Component {
     // unfocused?
     timeout = setTimeout(() => {
       // set focused state
-      this.setState({ focused: false });
+      this.setState({ focused: false, icons: this.state.data });
+      // reset input value
+      this.input.value = '';
     }, 300);
   }
 
