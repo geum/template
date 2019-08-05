@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Common, Icon } from '@components';
+import { Common, Schema } from '@components';
 
 /**
  * Schema Search Component
@@ -19,8 +19,20 @@ class Search extends React.Component {
     // initial state
     this.state = {
       modal: true,
-      schemas: [{ group: 'API' }, {}, {}, { group: 'REST' }, {}, {}]
+      schemas: [{ group: 'API' }, {}, {}, { group: 'REST' }, {}, {}],
+      tab: 'info'
     }
+  }
+
+  /**
+   * On modal tab change
+   *
+   * @param  {String} tab
+   * @param  {Event} e
+   * @return {undefined}
+   */
+  handleTabClick = (tab, e) => {
+    this.setState({ tab });
   }
 
   /**
@@ -166,7 +178,7 @@ class Search extends React.Component {
           visible={this.state.modal}
         >
           <div className="admin-schema-modal d-flex flex-column">
-            <div className="row d-flex header align-items-center p-4">
+            <div className="header row d-flex align-items-center p-4">
               <div className="col-md">
                 <h3>Create Schema</h3>
               </div>
@@ -180,21 +192,33 @@ class Search extends React.Component {
               </div>
             </div>
 
-            <div className="row mt-3">
+            <div className="tabs row mt-3">
               <div className="col-md">
                 <ul className="nav nav-tabs">
                   <li className="nav-item">
-                    <Link className="nav-link active" to="#">
+                    <Link
+                      className={`nav-link ${this.state.tab === 'info' ? 'active' : ''}`}
+                      to="#"
+                      onClick={this.handleTabClick.bind(this, 'info')}
+                    >
                       Info
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="#">
+                    <Link
+                      className={`nav-link ${this.state.tab === 'fields' ? 'active' : ''}`}
+                      to="#"
+                      onClick={this.handleTabClick.bind(this, 'fields')}
+                    >
                       Fields
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to="#">
+                    <Link
+                      className={`nav-link ${this.state.tab === 'relations' ? 'active' : ''}`}
+                      to="#"
+                      onClick={this.handleTabClick.bind(this, 'relations')}
+                    >
                       Relations
                     </Link>
                   </li>
@@ -202,68 +226,10 @@ class Search extends React.Component {
               </div>
             </div>
 
-            {/** Separate as component */}
-            <div className="mt-3 p-4 admin-schema-info">
-              <div className="form-group">
-                <label>
-                  Singular <span className="text-danger">*</span>
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Singular"
-                />
-              </div>
-
-              <div className="form-group">
-                <label>
-                  Plural <span className="text-danger">*</span>
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Plural"
-                />
-              </div>
-
-              <div className="form-group">
-                <label>
-                  Keyword <span className="text-danger">*</span>
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Keyword"
-                />
-              </div>
-
-              <div className="form-group">
-                <label>
-                  Group <span className="text-danger">*</span>
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Group"
-                />
-              </div>
-
-              <div className="form-group">
-                <label>
-                  Icon
-                </label>
-                <Icon.Picker />
-              </div>
-              <div className="form-group">
-                <label>
-                  Summary
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Summary"
-                />
-              </div>
+            <div className="content mt-3 p-4">
+              <Schema.Form.Info
+                className={this.state.tab === 'info' ? '' : 'd-none'}
+              />
             </div>
 
             <div className="d-flex p-3 mt-auto">

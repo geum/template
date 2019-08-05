@@ -22,6 +22,7 @@ class Picker extends React.Component {
   constructor(props) {
     super(props);
 
+    // format icons
     let data = this.formatIcons(IconData);
 
     // initial state
@@ -83,6 +84,13 @@ class Picker extends React.Component {
    * @return {undefined}
    */
   handleClick = (e) => {
+    // button was clicked?
+    // if (e.target.nodeName === 'I'
+    //   || e.target.nodeName === 'BUTTON'
+    // ) {
+    //   return;
+    // }
+
     // clear menu timeout
     clearTimeout(timeout);
     // keep focusing on input
@@ -110,7 +118,7 @@ class Picker extends React.Component {
       this.setState({ focused: false, icons: this.state.data });
       // reset input value
       this.input.value = '';
-    }, 300);
+    }, 200);
   }
 
   /**
@@ -119,7 +127,7 @@ class Picker extends React.Component {
    * @param  {Event} e
    * @return {undefined}
    */
-  handleInput = (e) => {
+  handleChange = (e) => {
     // get the icon data
     let { data } = this.state;
     // get the filter
@@ -201,6 +209,7 @@ class Picker extends React.Component {
         <button
           className={`icon-button border ${active ? 'btn-purple' : ''}`}
           key={key}
+          title={`${icon.label} - "${icon.prefix} fa-${key}"`}
           onClick={this.handleIconSelect.bind(this, key)}
         >
           <i className={`${icon.prefix} fa-${key}`}></i>
@@ -231,7 +240,10 @@ class Picker extends React.Component {
             className="form-control"
             onFocus={this.handleFocus}
             onBlur={this.handleFocus}
-            onChange={this.handleInput}
+            onChange={this.handleChange}
+            placeholder={
+              this.state.selected && this.state.selected.label
+            }
             ref={ input => this.input = input }
           />
         </div>

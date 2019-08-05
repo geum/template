@@ -8,11 +8,10 @@
 
   .icon-list {
     background-color: #FFF;
-    border-top: none;
+    border-top: none !important;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    max-height: 250px;
+    justify-content: space-around;
     max-height: 250px;
     overflow-y: scroll;
     position: absolute;
