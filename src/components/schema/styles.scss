@@ -13,6 +13,43 @@
   }
 }
 
+.admin-schema-info {
+
+}
+
+.admin-schema-fields {
+  .field-container {
+
+  }
+
+  .field {
+    background-color: #E3E3E9;
+    min-height: 100px;
+    position: relative;
+    user-select: none;
+
+    .field-label {
+      font-size: 16px;
+      font-weight: 400;
+      margin: 0;
+    }
+
+    .field-name {
+      font-size: 12px;
+      font-weight: lighter;
+      margin: 0;
+    }
+
+    .field-actions {
+      font-size: 18px;
+    }
+
+    &.dragging * {
+      color: #FFF;
+    }
+  }
+}
+
 .admin-schema-modal {
   color: #666;
   height: 100%;

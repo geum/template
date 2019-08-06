@@ -226,7 +226,7 @@ class Search extends React.Component {
               </div>
             </div>
 
-            <div className="content mt-3 px-4 py-3">
+            <div className="content mt-3 p-4">
               <Schema.Form.Info
                 className={this.state.tab === 'info' ? '' : 'd-none'}
               />
